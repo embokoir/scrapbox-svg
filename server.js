@@ -15,10 +15,10 @@ app.get('/', async (req, res) => {
     '- dark: "1" →you get dark thumbnail (optional. default: 0)',
     '- height: "normal" →228px, "lower" →188px, "lowest" →148px (optional. default: normal)',
     '# Attention',
-    '- You need append "#.png" at the end of url.',
-    '- Text (especially Symbol) must be encoded, see https://tech-unlimited.com/urlencode.html',
+    '- You need append ".svg" at the end of url.',
+    '- Text (especially Symbol) must be encoded. See https://tech-unlimited.com/urlencode.html',
     '# Example',
-    '- [https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Scrapbox%20with%20SVG#.png]'
+    '- [https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Scrapbox%20with%20SVG.svg]'
   ].join('<br>')
   res.send(tutorialText)
 })
@@ -28,7 +28,7 @@ app.get('/thumbnail', async(req, res) => {
   console.log(Object.keys(req.query).map(key=>`${key}:${req.query[key]}`).join('/'))
 
   // parameters
-  const text = req.query.text
+  const text = req.query.text || 'no text'
   const fontSize = text.length <= 10 ? 40 : text.length <= 20 ? 30 : 25
   const height = req.query.height === 'lower' ? 188 : req.query.height === 'lowest' ? 148 : 228
   const isDark = Number(req.query.dark)
