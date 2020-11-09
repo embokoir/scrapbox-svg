@@ -42,11 +42,11 @@
 // script.js
 scrapbox.PageMenu.addItem({
 	title: `Get SVG Thumbnail `,
-    image: "https://scrapbox.io/assets/landing/img/logo.png",
-    onClick: () => {
-   		const t = scrapbox.Page.title
-   		const height = t.length <= 10 ? 'normal' : t.length <= 20 ? 'lower' : 'lowest'
-   		prompt('Copy', `[https://scrapbox-svg.glitch.me/thumbnail?dark=0&height=normal&text=${encodeURIComponent(t)}#.svg]`)
+  image: "https://scrapbox.io/assets/landing/img/logo.png",
+  onClick: () => {
+  	const t = scrapbox.Page.title
+   	const height = t.length <= 10 ? 'normal' : t.length <= 20 ? 'lower' : 'lowest'
+   	prompt('Copy', `[https://scrapbox-svg.glitch.me/thumbnail?dark=0&height=normal&text=${encodeURIComponent(t)}#.svg]`)
 	}
 })
 ```
