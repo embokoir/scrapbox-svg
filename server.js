@@ -4,23 +4,9 @@ const axios = require('axios')
 const app = express()
 const PORT = 8888
 
-// tutorial
+// root
 app.get('/', async (req, res) => {
-  console.log('GET /')
-  const tutorialText = [
-    'How to use',
-    '# Base url: https://scrapbox-svg.glitch.me/thumbnail',
-    '# Parameters',
-    '- text: like "Scrapbox with SVG" (required. default: "no text")',
-    '- dark: "1" →you get dark thumbnail (optional. default: 0)',
-    '- height: "normal" →228px, "lower" →188px, "lowest" →148px (optional. default: normal)',
-    '# Attention',
-    '- You need append ".svg" at the end of url.',
-    '- Text (especially Symbol) must be encoded. See https://tech-unlimited.com/urlencode.html',
-    '# Example',
-    '- [https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Scrapbox%20with%20SVG.svg]'
-  ].join('<br>')
-  res.send(tutorialText)
+  res.send('Welcome to scrapbox-svg. See https://github.com/embokoir/scrapbox-svg')
 })
 
 // main
