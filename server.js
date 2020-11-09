@@ -9,7 +9,7 @@ app.get('/', async (req, res) => {
   console.log('GET /')
   const tutorialText = [
     'How to use',
-    '# Base URL: https://scrapbox-svg.glitch.me/thumbnail',
+    '# Base url: https://scrapbox-svg.glitch.me/thumbnail',
     '# Parameters',
     '- text: like "Scrapbox with SVG" (required. default: "no text")',
     '- dark: "1" →you get dark thumbnail (optional. default: 0)',
@@ -23,10 +23,8 @@ app.get('/', async (req, res) => {
   res.send(tutorialText)
 })
 
+// main
 app.get('/thumbnail', async(req, res) => {
-  // debug
-  console.log(Object.keys(req.query).map(key=>`${key}:${req.query[key]}`).join('/'))
-
   // parameters
   const text = req.query.text || 'no text'
   const fontSize = text.length <= 10 ? 40 : text.length <= 20 ? 30 : 25
