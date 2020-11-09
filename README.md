@@ -1,34 +1,34 @@
 # About
 
-- This generates a thumbnail image for [Scrapbox](https://scrapbox.io)
+- An application to generate a thumbnail image for [Scrapbox](https://scrapbox.io)
 - Made with SVG, Node, Express, Glitch
 
 # How to use
 
-## Base url
+## Basic url
 
-- https://scrapbox-svg.glitch.me/thumbnail
+- https://scrapbox-svg.glitch.me/thumbnail?text=Scrapbox%20SVG
 
 ## Parameters
 
-- `text` : like "Scrapbox with SVG" (required. default: "no text". See also Attention)
-- `dark`: 1 →you get dark thumbnail (optional. default: 0)
+- `text` : like "Enjoy Scrapbox with SVG thumbnail" (required. default: "no text". See also Attention)
+- `dark`: 1 then you get a dark thumbnail (optional. default: 0)
 - `height`(optional. default: "normal"):
   - "normal" →228px
   - "lower" →188px
   - "lowest" →148px
 
-[![Image from Gyazo](https://i.gyazo.com/f1543c0b5a3572f14fe347f3cba0e957.png)](https://gyazo.com/f1543c0b5a3572f14fe347f3cba0e957)
+[![Image from Gyazo](https://i.gyazo.com/a221a03c70b29d2b20d50c9895f92e11.png)](https://gyazo.com/a221a03c70b29d2b20d50c9895f92e11)
 
 ## Attention
 
-- You need append `.svg` at the end of url.
+- You need append `#.svg` at the end of url.
 - Text (especially Symbol) must be encoded. See [https://tech-unlimited.com/urlencode.html](https://tech-unlimited.com/urlencode.html)
 - Width is always 288px.
 
 ## Example
 
 ```
-[https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Scrapbox%20with%20SVG.svg]
+[https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Enjoy%20Scrapbox%20with%20SVG%20thumbnail%21#.svg]
 ```
-[![Image from Gyazo](https://i.gyazo.com/ec3c42bbcaefc7114575c2097331347a.png)](https://gyazo.com/ec3c42bbcaefc7114575c2097331347a)
+[![Image from Gyazo](https://i.gyazo.com/c1b2da0b490a6480975ffda6ed14e1dd.png)](https://gyazo.com/c1b2da0b490a6480975ffda6ed14e1dd)
