@@ -1,7 +1,9 @@
 # About
 
-- An application to generate a thumbnail image for [Scrapbox](https://scrapbox.io)
+- An application to generate dynamically a thumbnail image for [Scrapbox](https://scrapbox.io)
 - Made with SVG, Node, Express, Glitch
+
+[![Image from Gyazo](https://i.gyazo.com/37fc3eed2db5ec75a942b1a6af34c431.png)](https://gyazo.com/37fc3eed2db5ec75a942b1a6af34c431)
 
 # How to use
 
