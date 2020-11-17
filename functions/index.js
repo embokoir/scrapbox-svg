@@ -1,10 +1,11 @@
+const functions = require('firebase-functions');
 const express = require('express')
 
 const app = express()
-const PORT = 8888
 
 // root
 app.get('/', async (req, res) => {
+  functions.logger.info('/', req.ip)
   res.send('Welcome to scrapbox-svg. See https://github.com/embokoir/scrapbox-svg')
 })
 
@@ -36,5 +37,11 @@ app.get('/thumbnail', async(req, res) => {
   res.send(svg)
 })
 
-app.listen(PORT)
-console.log(`Lisntening on PORT ${PORT}...`)
+exports.app = functions.https.onRequest(app);
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
