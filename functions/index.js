@@ -1,16 +1,18 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions')
 const express = require('express')
 
 const app = express()
 
 // root
 app.get('/', async (req, res) => {
-  functions.logger.info('/', req.ip)
-  res.send('Welcome to scrapbox-svg. See https://github.com/embokoir/scrapbox-svg')
+  functions.logger.info('/')
+  res.send('Welcome to scrapbox-svg.<br />About: <a href="https://github.com/embokoir/scrapbox-svg" target="_blank">https://github.com/embokoir/scrapbox-svg</a>')
 })
 
 // main
 app.get('/thumbnail', async(req, res) => {
+  functions.logger.info(`/thumbnail, ${req.query.text}`, {...req.query})
+
   // parameters
   const text = req.query.text || 'no text'
   const fontSize = text.length <= 10 ? 40 : text.length <= 20 ? 30 : 25
@@ -37,11 +39,4 @@ app.get('/thumbnail', async(req, res) => {
   res.send(svg)
 })
 
-exports.app = functions.https.onRequest(app);
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+exports.app = functions.https.onRequest(app)
