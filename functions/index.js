@@ -1,15 +1,18 @@
+const functions = require('firebase-functions')
 const express = require('express')
 
 const app = express()
-const PORT = 8888
 
 // root
 app.get('/', async (req, res) => {
-  res.send('Welcome to scrapbox-svg. See https://github.com/embokoir/scrapbox-svg')
+  functions.logger.info('/')
+  res.send('Welcome to scrapbox-svg.<br />About: <a href="https://github.com/embokoir/scrapbox-svg" target="_blank">https://github.com/embokoir/scrapbox-svg</a>')
 })
 
 // main
 app.get('/thumbnail', async(req, res) => {
+  functions.logger.info(`/thumbnail, ${req.query.text}`, {...req.query})
+
   // parameters
   const text = req.query.text || 'no text'
   const fontSize = text.length <= 10 ? 40 : text.length <= 20 ? 30 : 25
@@ -36,5 +39,4 @@ app.get('/thumbnail', async(req, res) => {
   res.send(svg)
 })
 
-app.listen(PORT)
-console.log(`Lisntening on PORT ${PORT}...`)
+exports.app = functions.https.onRequest(app)
