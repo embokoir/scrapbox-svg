@@ -1,7 +1,7 @@
 # About
 
 - An application to generate dynamically a thumbnail image for [Scrapbox](https://scrapbox.io)
-- Made with SVG, Node, Express, Glitch
+- Made with SVG, Node, Express, Firebase
 
 [![Image from Gyazo](https://i.gyazo.com/37fc3eed2db5ec75a942b1a6af34c431.png)](https://gyazo.com/37fc3eed2db5ec75a942b1a6af34c431)
 
@@ -9,7 +9,7 @@
 
 ## Basic url
 
-- https://scrapbox-svg.glitch.me/thumbnail?text=Scrapbox%20SVG
+- https://scrapbox-svg.web.app/thumbnail?text=Scrapbox%20SVG
 
 ## Parameters
 
@@ -31,7 +31,7 @@
 ## Example
 
 ```
-[https://scrapbox-svg.glitch.me/thumbnail?dark=1&height=normal&text=Enjoy%20Scrapbox%20with%20SVG%20thumbnail%21#.svg]
+[https://scrapbox-svg.web.app/thumbnail?dark=1&height=normal&text=Enjoy%20Scrapbox%20with%20SVG%20thumbnail%21#.svg]
 ```
 [![Image from Gyazo](https://i.gyazo.com/c1b2da0b490a6480975ffda6ed14e1dd.png)](https://gyazo.com/c1b2da0b490a6480975ffda6ed14e1dd)
 
@@ -48,7 +48,7 @@ scrapbox.PageMenu.addItem({
   onClick: () => {
   	const t = scrapbox.Page.title
    	const height = t.length <= 10 ? 'normal' : t.length <= 20 ? 'lower' : 'lowest'
-   	prompt('Copy', `[https://scrapbox-svg.glitch.me/thumbnail?dark=0&height=normal&text=${encodeURIComponent(t)}#.svg]`)
+   	prompt('Copy', `[https://scrapbox-svg.web.app/thumbnail?dark=0&height=normal&text=${encodeURIComponent(t)}#.svg]`)
   }
 })
 ```
