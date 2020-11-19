@@ -6,7 +6,7 @@ const app = express()
 // root
 app.get('/', async (req, res) => {
   functions.logger.info('/')
-  res.send('Welcome to scrapbox-svg.<br />About: <a href="https://github.com/embokoir/scrapbox-svg" target="_blank">https://github.com/embokoir/scrapbox-svg</a>')
+  res.send('Welcome to scrapbox-svg.<br />About: <a href="https://github.com/embokoir/scrapbox-svg" target="_blank">https://github.com/embokoir/scrapbox-svg</a>!')
 })
 
 // main
