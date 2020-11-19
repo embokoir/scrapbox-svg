@@ -24,11 +24,18 @@ app.get('/thumbnail', async(req, res) => {
   // xml
   const svg = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 ${height}">`,
+
+    // Scrapboxの中に置いたSVGでGoogle Fontsが読み込まれないので避難
+    // `<style type="text/css">`,
+    // `@import url("https://fonts.googleapis.com/css?family=Kosugi Maru");`,
+    // `text {font-family: helvetica, arial, "Kosugi Maru", sans-serif ; }`,
+    // `</style>`,
+
     `<rect x="0" y="0" width="288" height="${height}" fill="${backgroundColor}"></rect>`,
     `<foreignObject requiredFeatures="http://www.w3.org/1999/xhtml" width="288" height="${height}">`,
     `<div xmlns="http://www.w3.org/1999/xhtml" style="color: ${fontColor}; font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif; height: ${height}px; display:table; text-align:center;">`,
     `<p style="width: 288px; font-size: ${fontSize}px; padding: 10px 20px 20px 20px; display: table-cell; vertical-align: middle;">`,
-    `<span style="border-bottom: solid 5px #5CD8A4; text-align: center;">${text}</span>`,
+    `<text id="text" style="border-bottom: ridge 5px #5CD8A4; text-align: center; line-height: 1.75;">${text}</text>`,
     `</p>`,
     `</div>`,
     `</foreignObject>`,
