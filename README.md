@@ -1,3 +1,5 @@
+![Deploy](https://github.com/embokoir/scrapbox-svg/workflows/Deploy%20Hosting%20&%20Functions/badge.svg)
+
 # About
 
 - An application to generate dynamically a thumbnail image for [Scrapbox](https://scrapbox.io)
